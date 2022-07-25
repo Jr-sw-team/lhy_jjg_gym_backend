@@ -1,6 +1,6 @@
 ## 👱‍♂️ Jr team Back-end 입니다👱‍♀️
 
-프론트엔드 & [백엔드](https://github.com/Jr-sw-team/lhy_jjg_gym_backend)로 구성된 팀으로 협업하고 있습니다!
+[프론트엔드](https://github.com/Jr-sw-team/lhy_jjg_gym_frontend) & 백엔드로 구성된 팀으로 협업하고 있습니다!
 
 2022년 창업대전 **Jr**팀 **백엔드**입니다
 
