@@ -12,7 +12,7 @@ from .models import User
 class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
-    list_display = ('get_full_name', 'email', 'username', 'is_superuser',)
+    list_display = ('get_full_name', 'email', 'username', 'is_superuser', 'is_trainer')
     list_display_links = ('get_full_name',)
     list_filter = ('is_superuser',)
 

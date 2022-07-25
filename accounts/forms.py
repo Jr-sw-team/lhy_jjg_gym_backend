@@ -106,8 +106,11 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
-    # password = ReadOnlyPasswordHashField(
+    # password1 = ReadOnlyPasswordHashField(
     #     label=_('Password')
+    # )
+    # password2 = ReadOnlyPasswordHashField(
+    #     label=_('Password confirmation')
     # )
     password1 = forms.CharField(
         label=_('Password'),
@@ -142,3 +145,11 @@ class UserChangeForm(forms.ModelForm):
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError("Passwords don't match")
         return password2
+
+    def save(self, commit=True):
+        user = super(UserChangeForm, self).save(commit=False)
+        user.email = UserManager.normalize_email(self.cleaned_data['email'])
+        user.set_password(self.cleaned_data["password1"])
+        if commit:
+            user.save()
+        return user
